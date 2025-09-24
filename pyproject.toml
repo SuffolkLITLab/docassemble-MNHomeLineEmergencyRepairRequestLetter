@@ -1,0 +1,25 @@
+[build-system]
+requires = [
+    "setuptools==80.9.0",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "docassemble.MNHomeLineEmergencyRepairRequestLetter"
+version = "1.0"
+description = "Emergency Repair Request"
+readme = "README.md"
+authors = [
+    { name = "Elisabeth Clagett", email = "litlab@suffolk.edu" },
+]
+dependencies = [
+    "docassemble.AssemblyLine @ git+https://github.com/SuffolkLITLab/docassemble-AssemblyLine.git@main",
+]
+
+[project.urls]
+Homepage = "https://docassemble.org"
+
+[tool.setuptools.packages.find]
+where = [
+    ".",
+]
