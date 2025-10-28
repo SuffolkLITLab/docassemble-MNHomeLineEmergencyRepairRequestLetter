@@ -87,6 +87,7 @@ code: |
   other_parties.gather()
   set_progress(33)
   issue_description
+  emergency_repair_request_preview_question
   users[0].signature
   interview_order_emergency_repair_request = True
 ---
@@ -115,7 +116,9 @@ continue button field: emergency_repair_request_intro
 question: |
   Emergency Repair Request
 subquestion: |
-  This interview will help you draft an Emergency Repair Request Letter.
+  This interview will help you draft an Emergency Repair Request Letter.   
+  
+  If you are a Minnesota Tennant, you can use this interview to draft a letter to your landlord requesting emergency repairs.
   
   Before you get started, please gather:
   
@@ -128,7 +131,7 @@ subquestion: |
   1. Sign the drafted form
   2. Send the letter to your landlord
 
-  If you are a Minnesota Tennant, you can use this interview to draft a letter to your landlord requesting emergency repairs.
+
 
   Most people take about 5 minutes to complete this interview.
 
@@ -137,7 +140,7 @@ id: ask_other_parties
 question: |
   What is your landlord's name?
 subquestion: |
-  Your landlord may be a person (like an individual property owner) or a business (like a management company).  
+  Your landlord may be a person (an individual property owner) or a business (a management company).  
   Please enter the information below. If there is more than one landlord, you can add them one at a time.
 fields:
   - "Type of landlord": other_parties[i].landlord_type
@@ -153,13 +156,18 @@ fields:
     show if:
       variable: other_parties[i].landlord_type
       is: "Person"
-  - "Organization name": other_parties[i].name.text
+  - "Organization name": other_parties[i].name.first
     show if:
       variable: other_parties[i].landlord_type
       is: "Business/Organization"
 
 ---
-
+id: any other opposing parties
+question: |
+  Do you have another landlord you would like to add?
+fields:
+  - no label: other_parties.there_is_another
+    datatype: yesnoradio
 ---
 id: This is the issue s I am experiencing and a brief description of the problem
 question: |
@@ -168,6 +176,7 @@ fields:
   - "Issue description": issue_description
 
 ---
+
 id: preview emergency_repair_request
 question: |
   Preview your form before you sign it
@@ -258,7 +267,7 @@ event: emergency_repair_request_download
 question: |
   All done
 subquestion: |
-  Thank you ${users}. Your form is ready to download and deliver.
+  Thank you ${users}. Your letter is ready to download and send.
   
   View, download and send your form below. Click the "Edit answers" button to fix any mistakes.
 
