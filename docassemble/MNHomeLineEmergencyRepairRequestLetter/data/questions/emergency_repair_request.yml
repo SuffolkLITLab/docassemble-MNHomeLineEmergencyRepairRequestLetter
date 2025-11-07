@@ -171,9 +171,10 @@ fields:
 ---
 id: This is the issue s I am experiencing and a brief description of the problem
 question: |
-  This is the issue(s) I am experiencing and a brief description of the problem:
+  This is the issue or issues I am experiencing and a brief description of the problem:
 fields:
   - "Issue description": issue_description
+    datatype: area
 
 ---
 
