@@ -1,6 +1,7 @@
 ---
 include:
   - docassemble.AssemblyLine:assembly_line.yml
+  - docassemble.HOMELineTheme:main.yml
 ---
 metadata:
   title: >-
@@ -10,20 +11,10 @@ metadata:
   description: |-
     This interview helps someone in Minnesota draft an Emergency Repair Request Letter.
   can_I_use_this_form: |
-    If you are a Minnesota Tennant, you can use this interview to draft a letter to your landlord requesting emergency repairs.
+    If you are a Minnesota Tenant, you can use this interview to draft a letter to your landlord requesting emergency repairs.
   before_you_start: |
     This interview will help you draft an Emergency Repair Request Letter.
-    
-    Before you get started, please gather:
-    
-    1. Landlord name
-    2. Your Address
-    3. Issue/ problem description
-    
-    When you are finished, you will need to:
-    
-    1. Sign the drafted form
-    2. Send the letter to your landlord
+
   maturity: production
   estimated_completion_minutes: 5
   estimated_completion_delta: 5
@@ -33,9 +24,8 @@ metadata:
     - "HO-00-00-00-00"
   authors:
     - Elisabeth Clagett
-  original_form: []
-  original_form_published_on: ""
-  allowed_courts: []
+  original_form: https://homelinemn.org/wp-content/uploads/2023/12/Emergency-Repair-Request-Letter.pdf
+  original_form_published_on: 2023-12
   typical_role: "tenant"
   al_weaver_version: "1.11.0"
   generated_on: "2025-09-17"
@@ -45,7 +35,6 @@ metadata:
   review_date: 2025-09-17
   form_titles:
     - Emergency Repair Request
-  form_numbers: []
   update_notes: |
 ---
 code: |
@@ -124,12 +113,10 @@ subquestion: |
   
   1. Landlord name
   2. Your Address
-  3. Issue/ problem description
   
   When you are finished, you will need to:
   
-  1. Sign the drafted form
-  2. Send the letter to your landlord
+  1. Send the letter to your landlord
 
 
 
@@ -171,7 +158,7 @@ fields:
 ---
 id: This is the issue s I am experiencing and a brief description of the problem
 question: |
-  This is the issue or issues I am experiencing and a brief description of the problem:
+  This is the issue I am experiencing and a brief description of the problem:
 fields:
   - "Issue description": issue_description
     datatype: area
